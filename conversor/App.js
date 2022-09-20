@@ -6,16 +6,16 @@ export default function App() {
 
   const [dollarPrice, setDollarPrice] = useState(0);
   const [dollarCount, setDollarCount] = useState(0);
-  const [realPrice, setRealPrice] = useState(0);
+  const [realCount, setRealCount] = useState(0);
 
   function conversion()
   {
-    setRealPrice((dollarCount * dollarPrice).toFixed(2));
+    setDollarCount((realCount / dollarPrice).toFixed(2));
   }
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Conversor de moeda, dólar para real</Text>
+      <Text style={styles.titulo}>Conversor de moeda, real para dólar</Text>
       <TextInput
         style={styles.input}
         placeholder="Digite a cotação do dólar!"
@@ -25,16 +25,16 @@ export default function App() {
       </TextInput>
       <TextInput
         style={styles.input}
-        placeholder="Digite quantos dólares você tem!"
+        placeholder="Digite quantos reais você tem!"
         placeholderTextColor="#C0C0C0" 
-        onChangeText={input => {setDollarCount(input)}}
+        onChangeText={input => {setRealCount(input)}}
       >
       </TextInput>
 
       <TouchableOpacity style={styles.button} onPress={conversion}></TouchableOpacity>
       
       <Text style={styles.h2}>Resultado!</Text>
-      <Text style={styles.resultado}>{"R$" + realPrice}</Text>
+      <Text style={styles.resultado}>{"R$" + dollarCount}</Text>
     </View>
   );
 }
