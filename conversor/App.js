@@ -10,7 +10,7 @@ export default function App() {
 
   function conversion()
   {
-    setRealPrice(dollarCount * dollarPrice);
+    setRealPrice((dollarCount * dollarPrice).toFixed(2));
   }
 
   return (
@@ -31,10 +31,10 @@ export default function App() {
       >
       </TextInput>
 
-      <TouchableOpacity style={styles.button} onMagicTap={conversion}></TouchableOpacity>
+      <TouchableOpacity style={styles.button} onPress={conversion}></TouchableOpacity>
       
       <Text style={styles.h2}>Resultado!</Text>
-      <Text style={styles.resultado}>{realPrice}</Text>
+      <Text style={styles.resultado}>{"R$" + realPrice}</Text>
     </View>
   );
 }
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   button:{
     height: '35px',
     width: '25vw',
-    backgroundColor: 'black',
+    backgroundColor: '#8A97A9',
     borderRadius: '5px',
   },
 
