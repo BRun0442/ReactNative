@@ -34,7 +34,7 @@ export default function App() {
       <TouchableOpacity style={styles.button} onPress={conversion}></TouchableOpacity>
       
       <Text style={styles.h2}>Resultado!</Text>
-      <Text style={styles.resultado}>{"R$" + dollarCount}</Text>
+      <Text style={styles.resultado}>{"$$" + dollarCount}</Text>
     </View>
   );
 }
