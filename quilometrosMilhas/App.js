@@ -14,16 +14,18 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Digite o valor em quilometros por hora🥵🥵🦍!</Text>
+      <Text style={styles.titulo}>Digite o valor em quilometros por hora🚗🏎!</Text>
 
+      <Text style={styles.texto}>Digite o valor em quilometros: </Text>
       <TextInput 
         style={styles.input}  
         placeholder="Digite o valor em km/h"
+        placeholderTextColor = "#A9A9A9"
         onChangeText={velocidade => {converter(velocidade)}}
       >
       </TextInput>
 
-      <Text style={styles.resultado}>{inputVelocidade}</Text>
+      <Text style={styles.resultado}>{inputVelocidade}mph</Text>
     </View>
   );
 }
@@ -31,22 +33,38 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     paddingTop: '10vh',
-    backgroundColor: '#fff',
+    backgroundColor: '#F5DEB3',
     alignItems: 'center',
-    justifyContent: 'center',
+    height: '100vh',
+    textAlign: 'center',
   },
 
   input:{
     textAlign: 'center',
     margin: '5%',
     fontSize: '1.5rem',
+    color: '#6D6D6D',
+    border: 'solid 2px black',
+    borderRadius: '5px',
   },
 
   titulo:{
     fontSize: '2rem',
+    marginBottom: '10vh',
+  },
+
+  texto:{
+    fontSize: '1.5rem',
   },
 
   resultado:{
     fontSize: '2rem',
+    marginTop: '10vh',
+    border: 'solid 2px black',
+    borderRadius: '5px',
+    paddingBottom: '0.5vh',
+    paddingTop: '0.5vh',
+    paddingLeft: '5vw',
+    paddingRight: '5vw',
   },
 });
